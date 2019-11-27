@@ -10,3 +10,14 @@ ReactDOM.render(<App />, document.getElementById('main'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+var x = document.getElementById("myDIV");
+
+// Code for Chrome, Safari and Opera
+x.addEventListener("webkitAnimationStart", myStartFunction);
+
+// Standard syntax
+x.addEventListener("animationstart", myStartFunction);
+
+function myStartFunction(event) {
+  this.innerHTML = "The animation-name is: " + event.animationName;
+}
